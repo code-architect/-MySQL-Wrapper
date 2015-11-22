@@ -16,12 +16,15 @@ $db = new MysqlDB('localhost', 'root','','oophp');
     <title>Document</title>
 </head>
 <body>
-    <?php $results = $db->query('select * from posts'); ?>
+    <?php //$results = $db->query('select * from posts'); ?>
     <?php
-    foreach($results as $row){
-        echo '<p><h2>'.$row['title'].'</h2></p>';
-        echo $row['body'];
-    }
+    //$db->where('id', 1);
+    $results = $db->get('posts', 3);
+
+    echo "<pre>";
+    print_r($results);
+    echo "</pre>";
+
     ?>
 </body>
 </html>
