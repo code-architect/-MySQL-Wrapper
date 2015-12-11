@@ -7,6 +7,13 @@
 
 require_once('Mysql.php');
 $db = new MysqlDB('localhost', 'root','','oophp');
+
+$insertData = [
+    'title' => 'Hello World',
+    'body'  => 'The world is not nice at all mate!'
+];
+
+if($db->insert('posts', $insertData)) echo "success";
 ?>
 
 <!doctype html>
@@ -19,12 +26,12 @@ $db = new MysqlDB('localhost', 'root','','oophp');
     <?php //$results = $db->query('select * from posts'); ?>
     <?php
     //$db->where('id', 1);
-    $results = $db->get('posts', 3);
+    /*$results = $db->get('posts', 3);
 
     echo "<pre>";
     print_r($results);
     echo "</pre>";
-
+*/
     ?>
 </body>
 </html>
